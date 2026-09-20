@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V64 EPS 2026 — Khảo sát Sức khỏe Doanh nghiệp (Phần 2/2)</title>
+    <style>
+        :root {
+            --primary-color: #059669;
+            --bg-color: #ecfdf5;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --text-color: #1f2937;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container { max-width: 760px; margin: 0 auto; }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-top: 6px solid var(--primary-color);
+        }
+
+        .card-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+
+        h1 { font-size: 1.6rem; margin-bottom: 12px; color: #065f46; }
+        h2 { font-size: 1.3rem; margin-bottom: 12px; color: #047857; border-bottom: 2px solid #a7f3d0; padding-bottom: 8px; }
+
+        .form-group { margin-bottom: 20px; }
+        label.question-title { display: block; font-weight: 600; margin-bottom: 10px; }
+        .required { color: #dc2626; }
+
+        .radio-group { display: flex; flex-direction: column; gap: 10px; }
+        .radio-option { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+
+        textarea, input[type="text"] {
+            width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; box-sizing: border-box; font-family: inherit;
+        }
+
+        textarea { height: 90px; resize: vertical; }
+
+        button.btn-submit {
+            background-color: var(--primary-color);
+            color: white; border: none; padding: 14px 28px; font-size: 1rem; font-weight: bold; border-radius: 8px; cursor: pointer; width: 100%;
+        }
+
+        button.btn-submit:hover { background-color: #047857; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>V64 EPS 2026(FN) — Khảo sát Sức khỏe Doanh nghiệp [Phần 2/2]</h1>
+        <p>🔒 <strong>PHẦN 2/2 — ĐÁNH GIÁ LÃNH ĐẠO & ĐỀ XUẤT PHÁT TRIỂN</strong></p>
+        <p>⏱ Thời gian hoàn thành Phần 2: khoảng 10–13 phút.</p>
+    </div>
+
+    <form id="formPart2" action="#" method="POST">
+        <!-- ĐỐI CHIẾU THÔNG TIN -->
+        <div class="card-section">
+            <h2>📌 ĐỐI CHIẾU DỮ LIỆU CẢ 2 PHẦN</h2>
+            
+            <div class="form-group">
+                <label class="question-title">Bộ phận của bạn (để ghép dữ liệu với Phần 1): <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="department" value="Cửa hàng — Nhân viên bán hàng" required> Cửa hàng — Nhân viên bán hàng</label>
+                    <label class="radio-option"><input type="radio" name="department" value="Cửa hàng — Cửa hàng Trưởng"> Cửa hàng — Cửa hàng Trưởng</label>
+                    <label class="radio-option"><input type="radio" name="department" value="Kho / Cung ứng / Sản phẩm"> Kho / Cung ứng / Sản phẩm</label>
+                    <label class="radio-option"><input type="radio" name="department" value="Kinh doanh Online (TMĐT)"> Kinh doanh Online (TMĐT)</label>
+                    <label class="radio-option"><input type="radio" name="department" value="Hành chính – Nhân sự"> Hành chính – Nhân sự</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHẦN 3 -->
+        <div class="card-section">
+            <h2>📢 PHẦN 3 — ĐÁNH GIÁ LÃNH ĐẠO & BAN LÃNH ĐẠO</h2>
+            
+            <div class="form-group">
+                <label class="question-title">🚨 Hành động CỤ THỂ nào mà Ban Lãnh Đạo cần làm NGAY trong 30 ngày tới để khôi phục niềm tin?</label>
+                <textarea name="action_30_days" placeholder="Ví dụ: họp toàn công ty, minh bạch tài chính, cam kết lịch lương..."></textarea>
+            </div>
+        </div>
+
+        <!-- PHẦN 5: STOP - CONTINUE - START -->
+        <div class="card-section">
+            <h2>💡 PHẦN 5 — KHUNG ĐỀ XUẤT STOP — CONTINUE — START</h2>
+            
+            <div class="form-group">
+                <label class="question-title">🔴 DỪNG LẠI — Những việc Ban Lãnh Đạo cần DỪNG ngay vì gây hại hơn lợi:</label>
+                <textarea name="action_stop" placeholder="Những việc cần dừng ngay..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="question-title">🟡 TIẾP TỤC — Những việc đang làm tốt, cần phát huy:</label>
+                <textarea name="action_continue" placeholder="Những việc cần tiếp tục..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="question-title">🟢 BẮT ĐẦU — Những việc cần khởi động ngay để vực dậy tình hình:</label>
+                <textarea name="action_start" placeholder="Những việc cần bắt đầu ngay..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="question-title">🌟 Nếu bạn là Giám đốc V64 trong 1 ngày, điều đầu tiên bạn sẽ làm là gì?</label>
+                <textarea name="if_ceo" placeholder="Chia sẻ ý tưởng của bạn..."></textarea>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Hoàn Thành & Gửi Bài Khảo Sát ✔️</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('formPart2').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Cảm ơn bạn đã hoàn thành toàn bộ bài khảo sát EPS 2026!');
+    });
+</script>
+
+</body>
+</html>

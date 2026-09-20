@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V64 EPS 2026 — Khảo sát Sức khỏe Doanh nghiệp (Phần 1/2)</title>
+    <style>
+        :root {
+            --primary-color: #d97706;
+            --bg-color: #fffbe3;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --text-color: #1f2937;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-top: 6px solid var(--primary-color);
+        }
+
+        .card-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+
+        h1 { font-size: 1.6rem; margin-bottom: 12px; color: #92400e; }
+        h2 { font-size: 1.3rem; margin-bottom: 12px; color: #b45309; border-bottom: 2px solid #fef3c7; padding-bottom: 8px; }
+        h3 { font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px; }
+
+        .notice {
+            background-color: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label.question-title {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .required { color: #dc2626; }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        /* Thang điểm Likert scale */
+        .scale-rating {
+            display: flex;
+            justify-content: space-between;
+            overflow-x: auto;
+            padding: 10px 0;
+            gap: 8px;
+        }
+
+        .scale-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .scale-item input { margin-bottom: 4px; }
+
+        /* Bảng chọn điểm (Matrix) */
+        table.matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        table.matrix-table th, table.matrix-table td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+
+        table.matrix-table th:first-child, table.matrix-table td:first-child {
+            text-align: left;
+            width: 50%;
+        }
+
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        textarea { height: 90px; resize: vertical; }
+
+        button.btn-submit {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+        }
+
+        button.btn-submit:hover {
+            background-color: #b45309;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="card">
+        <h1>V64 EPS 2026(FN) — Khảo sát Sức khỏe Doanh nghiệp [Phần 1/2]</h1>
+        <p>🔒 <strong>BÀI KHẢO SÁT HOÀN TOÀN ẨN DANH</strong></p>
+        <p>Tên và thông tin nhận diện cá nhân không được ghi nhận. Kết quả chỉ dùng để giúp HR cải thiện môi trường làm việc.</p>
+        <div class="notice">
+            ⏱ <strong>ĐÂY LÀ PHẦN 1/2</strong> — Thời gian hoàn thành: khoảng 10–12 phút.<br>
+            📌 Sau khi hoàn thành Phần 1, vui lòng tiếp tục sang Phần 2/2.
+        </div>
+    </div>
+
+    <form id="formPart1" action="#" method="POST">
+        <!-- PHẦN A -->
+        <div class="card-section">
+            <h2>📋 PHẦN A — THÔNG TIN CƠ BẢN</h2>
+            
+            <div class="form-group">
+                <label class="question-title">Bạn đang làm việc tại bộ phận / vị trí nào? <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="department" value="Cửa hàng — Nhân viên bán hàng" required> Cửa hàng — Nhân viên bán hàng</label>
+                    <label class="radio-option"><input type="radio" name="department" value="Cửa hàng — Cửa hàng Trưởng"> Cửa hàng — Cửa hàng Trưởng</label>
+                    <label class="radio-option"><input type="radio" name="department" value="Kho / Cung ứng / Sản phẩm"> Kho / Cung ứng / Sản phẩm</label>
+                    <label class="radio-option"><input type="radio" name="department" value="Kinh doanh Online (TMĐT)"> Kinh doanh Online (TMĐT)</label>
+                    <label class="radio-option"><input type="radio" name="department" value="CSKH & Sale Online"> CSKH & Sale Online</label>
+                    <label class="radio-option"><input type="radio" name="department" value="Marketing"> Marketing</label>
+                    <label class="radio-option"><input type="radio" name="department" value="Tài chính – Kế toán"> Tài chính – Kế toán</label>
+                    <label class="radio-option"><input type="radio" name="department" value="Hành chính – Nhân sự"> Hành chính – Nhân sự</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question-title">Vị trí công việc của bạn là: <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="position" value="Nhân viên / Sales Associate" required> Nhân viên / Sales Associate</label>
+                    <label class="radio-option"><input type="radio" name="position" value="Chuyên viên / Specialist"> Chuyên viên / Specialist</label>
+                    <label class="radio-option"><input type="radio" name="position" value="Quản lý / Cửa hàng Trưởng"> Quản lý / Cửa hàng Trưởng</label>
+                    <label class="radio-option"><input type="radio" name="position" value="Trưởng bộ phận / Trưởng phòng"> Trưởng bộ phận / Trưởng phòng</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question-title">Thâm niên tại V64: <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="tenure" value="Dưới 6 tháng" required> Dưới 6 tháng</label>
+                    <label class="radio-option"><input type="radio" name="tenure" value="6 tháng – 1 năm"> 6 tháng – 1 năm</label>
+                    <label class="radio-option"><input type="radio" name="tenure" value="1 – 2 năm"> 1 – 2 năm</label>
+                    <label class="radio-option"><input type="radio" name="tenure" value="Trên 2 năm"> Trên 2 năm</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question-title">Bạn đang làm việc tại khu vực nào? <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="region" value="1. Khu vực TP. Hồ Chí Minh" required> 1. Khu vực TP. Hồ Chí Minh</label>
+                    <label class="radio-option"><input type="radio" name="region" value="2. Khu vực Miền Bắc"> 2. Khu vực Miền Bắc</label>
+                    <label class="radio-option"><input type="radio" name="region" value="3. Khu vực Miền Trung"> 3. Khu vực Miền Trung</label>
+                    <label class="radio-option"><input type="radio" name="region" value="4. Khu vực Miền Tây"> 4. Khu vực Miền Tây</label>
+                </div>
+            </div>
+
+            <div class="notice">
+                ⚠️ <strong>Lưu ý quan trọng:</strong> Để xác nhận bạn đang đọc kỹ từng câu hỏi, hãy chọn <strong>số 4</strong> cho câu hỏi ĐẦU TIÊN của Phần 2.2 bên dưới.
+            </div>
+        </div>
+
+        <!-- PHẦN 1 -->
+        <div class="card-section">
+            <h2>🪞 PHẦN 1 — TỰ ĐÁNH GIÁ CỐNG HIẾN</h2>
+            
+            <div class="form-group">
+                <label class="question-title">Mức độ nỗ lực & cống hiến tổng thể của tôi trong giai đoạn vừa qua (1: Không cố gắng - 10: Dốc toàn lực) <span class="required">*</span></label>
+                <div class="scale-rating">
+                    <!-- Thang từ 1 tới 10 -->
+                    <script>
+                        for(let i=1; i<=10; i++) {
+                            document.write(`<label class="scale-item"><input type="radio" name="effort" value="${i}" required> ${i}</label>`);
+                        }
+                    </script>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question-title">✅ Trong 3 tháng qua, kết quả / sáng kiến nổi bật nhất bạn đóng góp cho V64 là gì?</label>
+                <textarea name="achievements" placeholder="Ví dụ: tăng doanh số %, đề xuất ý tưởng, hỗ trợ đồng nghiệp..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="question-title">🚧 Rào cản LỚN NHẤT đang ngăn bạn cống hiến 100% công suất là gì?</label>
+                <textarea name="barriers" placeholder="Ví dụ: thiếu thông tin, quy trình rườm rà, thiếu công cụ..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="question-title">Bạn đang đối mặt với những khó khăn nào? (Chọn tất cả phù hợp)</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-option"><input type="checkbox" name="difficulties" value="Thu nhập không ổn định / lo lắng về lương"> Thu nhập không ổn định / lo lắng về tình hình lương thưởng</label>
+                    <label class="checkbox-option"><input type="checkbox" name="difficulties" value="Áp lực công việc quá cao"> Áp lực công việc quá cao, không cân bằng cuộc sống</label>
+                    <label class="checkbox-option"><input type="checkbox" name="difficulties" value="Không rõ mục tiêu công ty"> Không rõ mục tiêu / không biết công ty đang đi đâu</label>
+                    <label class="checkbox-option"><input type="checkbox" name="difficulties" value="Thiếu công cụ làm việc"> Thiếu công cụ, tài nguyên để làm việc hiệu quả</label>
+                    <label class="checkbox-option"><input type="checkbox" name="difficulties" value="Kiệt sức (burnout)"> Cảm thấy kiệt sức và mất động lực (burnout)</label>
+                    <label class="checkbox-option"><input type="checkbox" name="difficulties" value="Không có khó khăn đặc biệt"> Không có khó khăn đặc biệt nào</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHẦN 2 -->
+        <div class="card-section">
+            <h2>🌱 PHẦN 2 — MÔI TRƯỜNG LÀM VIỆC & SỨC SỐNG VĂN HÓA</h2>
+
+            <div class="form-group">
+                <label class="question-title">2.1 Đánh giá điều kiện làm việc (Thang điểm 1-5)</label>
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Tiêu chí</th>
+                            <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cơ sở vật chất, không gian làm việc</td>
+                            <td><input type="radio" name="env_facility" value="1" required></td>
+                            <td><input type="radio" name="env_facility" value="2"></td>
+                            <td><input type="radio" name="env_facility" value="3"></td>
+                            <td><input type="radio" name="env_facility" value="4"></td>
+                            <td><input type="radio" name="env_facility" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>Công cụ & hệ thống hỗ trợ công việc</td>
+                            <td><input type="radio" name="env_tools" value="1" required></td>
+                            <td><input type="radio" name="env_tools" value="2"></td>
+                            <td><input type="radio" name="env_tools" value="3"></td>
+                            <td><input type="radio" name="env_tools" value="4"></td>
+                            <td><input type="radio" name="env_tools" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>Quy trình nội bộ rõ ràng, không rườm rà</td>
+                            <td><input type="radio" name="env_process" value="1" required></td>
+                            <td><input type="radio" name="env_process" value="2"></td>
+                            <td><input type="radio" name="env_process" value="3"></td>
+                            <td><input type="radio" name="env_process" value="4"></td>
+                            <td><input type="radio" name="env_process" value="5"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="form-group">
+                <label class="question-title">2.2 Tôi hiểu rõ định hướng và mục tiêu của V64 trong giai đoạn này (Thang 1-10) <span class="required">* (Chú ý Attention Check chọn số 4)</span></label>
+                <div class="scale-rating">
+                    <script>
+                        for(let i=1; i<=10; i++) {
+                            document.write(`<label class="scale-item"><input type="radio" name="culture_goal" value="${i}" required> ${i}</label>`);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Gửi Phần 1 & Tiếp Tục Sang Phần 2/2 ➔</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('formPart1').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Đã hoàn thành Phần 1! Hệ thống sẽ chuyển sang Phần 2/2.');
+        window.location.href = 'part2.html';
+    });
+</script>
+
+</body>
+</html>
